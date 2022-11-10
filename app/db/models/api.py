@@ -4,7 +4,7 @@ import string
 from sqlalchemy import UniqueConstraint
 from sqlmodel import Field, Relationship
 
-from .common import UUIDModel, TimestampModel
+from common import UUIDModel, TimestampModel
 
 
 def get_random_string(length):
@@ -24,6 +24,7 @@ class ApiKeys(UUIDModel, TimestampModel, table=True):
     __tablename__ = "apikey"
     __table_args__ = (UniqueConstraint("email"),)
     apikey: str = Field(default=get_random_string(30))
+
     history: list['History'] = Relationship(back_populates="history")
 
     def __repr__(self):

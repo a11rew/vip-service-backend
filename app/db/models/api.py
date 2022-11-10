@@ -23,5 +23,4 @@ def get_random_string(length):
 class ApiKeys(UUIDModel, TimestampModel, table=True):
     __table_args__ = (UniqueConstraint("email"),)
     key: str = Field(default=get_random_string(30))
-
     history: list['History'] = Relationship(back_populates="history")

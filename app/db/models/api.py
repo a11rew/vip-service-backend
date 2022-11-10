@@ -16,16 +16,16 @@ def get_random_string(length):
     letters = string.ascii_lowercase
     numbers = string.digits
     alphaNum = letters + numbers
-    result_str = ''.join(random.choice(alphaNum) for i in range(length))
+    result_str = "".join(random.choice(alphaNum) for i in range(length))
     return result_str
 
 
-class ApiKeys(UUIDModel, TimestampModel, table=True):
+class ApiKey(UUIDModel, TimestampModel, table=True):
     __tablename__ = "apikey"
     __table_args__ = (UniqueConstraint("email"),)
     apikey: str = Field(default=get_random_string(30))
 
-    history: list['History'] = Relationship(back_populates="history")
+    user: list["History"] = Relationship(back_populates="history")
 
     def __repr__(self):
         return f"apikey: {self.apikey}"

@@ -1,4 +1,6 @@
 fastapi==0.79.0
+fastapi-users==10.2.1
+fastapi-users-db-sqlalchemy==4.0.3
 uvicorn[standard]==0.17.6
 ujson==5.4.0
 python-dotenv==0.20.0

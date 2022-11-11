@@ -11,7 +11,7 @@ class Signup(BaseModel):
     last_name: int
     email: str
     password: str
-    confirmed_password: str
+    
     # class Config:
     #     orm_mode = True
 

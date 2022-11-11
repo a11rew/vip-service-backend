@@ -4,13 +4,11 @@ from .schemas import Signup
 router = APIRouter()
 
 @router.get("/", response_model= Signup)
-async def signup_user(first_name: str,last_name: int, email: str, password: str, 
-                    confirmed_password: str):
+async def signup_user(first_name: str,last_name: int, email: str, password: str):
                     show = {
                         "first_name": first_name,
                         "last_name": last_name,
                         "email": email,
-                        "password": password,
-                        "confirmed_password": confirmed_password
+                        "password": password
                     }
                     return show

@@ -142,5 +142,6 @@ dmypy.json
 cython_debug/
 
 .python-version
+
 Pipfile
 Pipfile.lock

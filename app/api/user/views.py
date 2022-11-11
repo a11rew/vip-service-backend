@@ -12,7 +12,7 @@ async def get_user_api_key(
     # Check Database if User id exist 
     
     # If user exist get user APIkey
-    userAPIKey = APIKey(key='3fa85f64-5740-2262-b3fc-2c963f36afa1', user='3fa85f64-5740-2262-b3fc-2c963f36afa1', continent_name='africa')
+    userAPIKey = APIKey(key='3fa85f64-5740-2262-b3fc-2c963f36afa1', user='3fa85f64-5740-2262-b3fc-2c963f36afa1')
     
     # Send key string
     return userAPIKey

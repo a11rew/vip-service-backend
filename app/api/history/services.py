@@ -29,23 +29,24 @@ class HistoryService:
             detail="User has no history"
         )
 
-    async def clear_all_history(self, user_id: int):
 
-        statement = select(History).where(user_id=user_id)
-        user_history = self.session.execute(statement)
+    # async def clear_one_history(self, history_id: int, user_id: int):
 
-        self.session.delete(user_history)
+    #     statement = select(History).where(id=history_id, user_id=user_id)
+    #     result = self.session.execute(statement)
 
-        self.session.commit()
+    #     self.session.delete(result.one())
+    #     self.session.commit()
 
-        return None
+    #     return None
 
-    async def clear_one_history(self, history_id: int, user_id: int):
+    # async def clear_all_history(self, user_id: int):
 
-        statement = select(History).where(id=history_id, user_id=user_id)
-        result = self.session.execute(statement)
+    #     statement = select(History).where(user_id=user_id)
+    #     user_history = self.session.execute(statement)
 
-        self.session.delete(result.one())
-        self.session.commit()
+    #     self.session.delete(user_history)
 
-        return None
+    #     self.session.commit()
+
+    #     return None

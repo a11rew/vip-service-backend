@@ -1,14 +1,14 @@
 from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
-
+from search.schemas import SearchResponseSchema
 
 
 
 
 class HistoryBase(BaseModel):
     input: str
-    result: str
+    result: SearchResponseSchema | None = None
     
     class Config:
         orm_mode = True

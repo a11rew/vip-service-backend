@@ -21,17 +21,18 @@ async def get_user_history(offset: int = 0, limit: int = Query(default=20, lte=2
     return await user_history.get_user_history(user_id= user.id, limit=limit, offset=offset)
 
 
-@router.delete("/remove/history", response_model=GetHistory)
-async def remove_all_history(session: AsyncSession = Depends(db_session)):
-    user = current_user
-    all = HistoryService(session=session)
-    return await all.clear_all_history(user_id= user.id)
+# @router.delete("/remove/all", response_model=GetHistory)
+# async def remove_all_history(session: AsyncSession = Depends(db_session)):
+#     user = current_user
+#     all = HistoryService(session=session)
+#     return await all.clear_all_history(user_id= user.id)
 
-@router.delete("/remove/history/{id}", response_model=GetHistory)
-async def remove_one_item(id: int, session: AsyncSession = Depends(db_session)):
-    user = current_user
-    item = HistoryService(session=session).clear_one_history(history_id =id,  user_id=user.id)
-    return await item
+
+# @router.delete("/remove/{id}", response_model=GetHistory)
+# async def remove_one_item(id: int, session: AsyncSession = Depends(db_session)):
+#     user = current_user
+#     item = HistoryService(session=session).clear_one_history(history_id =id,  user_id=user.id)
+#     return await item
     
 
 # To create the history, there's no need for an endpoint.

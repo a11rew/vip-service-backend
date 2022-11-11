@@ -24,7 +24,7 @@ def get_random_string(length):
 
 class ApiKey(UUIDModel, TimestampModel, table=True):
     __tablename__ = "apikey"
-    __table_args__ = (UniqueConstraint("email"),)
+    __table_args__ = (UniqueConstraint("apikey"),)
     apikey: str = Field(default=get_random_string(30), index=True)
     
     user_id: Optional[str] = Field(default=None, foriegn_key="user.id")

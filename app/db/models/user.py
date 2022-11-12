@@ -2,7 +2,7 @@ from db.models.common import TimestampModel, UUIDModel
 
 
 class User(TimestampModel, UUIDModel, table=True):
-    __tablename__ = "user"
+    __tablename__ = "users"
 
     first_name: str
     last_name: str

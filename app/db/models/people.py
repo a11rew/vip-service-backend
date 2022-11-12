@@ -12,4 +12,4 @@ class People(TimestampModel, UUIDModel, table=True):
     is_vip: bool
 
     def __repr__(self):
-        return f"<Vip (id: {self.id})>"
+        return f"<Person (id: {self.id})>"

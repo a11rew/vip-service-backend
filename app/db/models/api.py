@@ -21,11 +21,11 @@ def get_random_string(length):
 
 
 class ApiKey(UUIDModel, TimestampModel, table=True):
-    __tablename__ = "apikey"
-    __table_args__ = (UniqueConstraint("apikey"),)
-    apikey: str = Field(default=get_random_string(30))
+    __tablename__ = "api_keys"
+    __table_args__ = (UniqueConstraint("api_key"),)
 
-    user_id: str = Field(default=None, foriegn_key="user.id")
+    api_key: str = Field(default=get_random_string(30))
+    user_id: str = Field(foreign_key="user.id")
 
     def __repr__(self):
-        return f"apikey: {self.apikey}"
+        return f"api_key: {self.key}"

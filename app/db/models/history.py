@@ -6,8 +6,8 @@ class History(TimestampModel, UUIDModel, table=True):
     __tablename__ = "history"
 
     input: str = Field(sa_column=Column(JSON))
-    result: int = Field(foreign_key="people.id")
-    user: int = Field(foreign_key="user.id")
+    result_id: int = Field(foreign_key="people.id")
+    user_id: int = Field(foreign_key="user.id")
 
     class Config:
         arbitrary_types_allowed = True

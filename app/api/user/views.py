@@ -1,8 +1,13 @@
 from uuid import UUID
-from fastapi import APIRouter, Depends
-from .schemas import APIKey
+from fastapi import APIRouter
+from .schemas import APIKey, Signup, SignupResponse
 
 router = APIRouter()
+
+
+@router.post("/signup", response_model=SignupResponse)
+async def create_user(signup: Signup):
+    return signup
 
 
 @router.get("/key")

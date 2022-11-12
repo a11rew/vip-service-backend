@@ -7,6 +7,8 @@ from api.history.views import router as history_router
 
 
 api_router = APIRouter()
+
+
 api_router.include_router(system_router, prefix="/system", tags=["system"])
 api_router.include_router(search_router, prefix="/search", tags=["search"])
 api_router.include_router(user_router, prefix="/user", tags=["user"])

@@ -12,8 +12,8 @@ def get_app() -> FastAPI:
     :return: application.
     """
     app = FastAPI(
-        title="FastAPI Starter Project",
-        description="FastAPI Starter Project",
+        title="VIP Service API",
+        description="Backend to VIP Service Project by Team Axe",
         version="1.0",
         docs_url="/api/docs/",
         redoc_url="/api/redoc/",

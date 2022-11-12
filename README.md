@@ -1,4 +1,4 @@
-# FastAPI Starter Project
+# VIP Service Backend
 
 Project includes:
 
